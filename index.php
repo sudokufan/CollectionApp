@@ -12,6 +12,8 @@ $releaseDate = pullSetRelease($db);
 
 <html>
 <head>
-    <body></body>
+    <body>
+
+</body>
 </head>
 </html>
