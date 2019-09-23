@@ -1,3 +1,5 @@
 <?php
 
-$db = new PDO ('mysql:host=db; dbname=AlexCollection', 'root', 'password');
+require_once('functions.php');
+
+$db = connectDB();
