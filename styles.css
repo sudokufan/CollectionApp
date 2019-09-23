@@ -12,6 +12,14 @@ nav h1 {
 	width: 200px;
 }
 
+setsBody {
+overflow: auto;
+}
+
+set {
+float: left;
+}
+
 /*Responsiveness*/
 
 @media screen and (max-width: 1200px) {

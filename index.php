@@ -24,30 +24,41 @@ $releaseDate = pullSetRelease($db);
         </nav>
 
         <div>
-            <div class="productMain">
-                <div class="product">
-                    <p>AKG AVIATION AV100 ANR HEADSET</p>
-                    <p>So I walked into the club like ...</p>
-                    <p>From
-                        <span class="currentPrice">$66.00</span>
-                        <span class="oldPrice">$76.00</span>
-                    </p>
+            <div class="setsBody" class="container">
+                <div class="set">
+                    <header><h1>SET NAME</h1></header>
+<!--   img tag will show the set symbol here    <img> -->
+                    <h1>Release Date</h1>
+                    <h1># of cards</h1>
                 </div>
-                <div class="product">
+
+                <div class="set">
+                    <header><h1>SET NAME #2</h1></header>
+                    <!--   img tag will show the set symbol here    <img> -->
+                    <h1>Release Date</h1>
+                    <h1># of cards</h1>
                 </div>
-                <div class="product">
+
+                <div class="set">
+                    <header><h1>SET NAME #3</h1></header>
+                    <!--   img tag will show the set symbol here    <img> -->
+                    <h1>Release Date</h1>
+                    <h1># of cards</h1>
                 </div>
-                <div class="product">
+
+                <div class="set">
                 </div>
-                <div class="product">
+
+                <div class="set">
                 </div>
-                <div class="product">
+
+                <div class="set">
                 </div>
-                <div class="product">
+
+                <div class="set">
                 </div>
-                <div class="product">
-                </div>
-            </div>
+
+             </div>
         </div>
 
         </body>
