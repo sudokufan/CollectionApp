@@ -4,6 +4,14 @@ require_once('functions.php');
 
 $db = connectDB();
 
-$sets = pullSetNames();
-$setSize = pullSetSize();
-$releaseDate = pullSetRelease();
+$sets = pullSetNames($db);
+$setSize = pullSetSize($db);
+$releaseDate = pullSetRelease($db);
+
+?>
+
+<html>
+<head>
+    <body></body>
+</head>
+</html>
