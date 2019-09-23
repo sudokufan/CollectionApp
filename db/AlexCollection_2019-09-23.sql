@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.27)
 # Database: AlexCollection
-# Generation Time: 2019-09-23 12:24:47 +0000
+# Generation Time: 2019-09-23 12:59:00 +0000
 # ************************************************************
 
 
@@ -27,16 +27,16 @@ DROP TABLE IF EXISTS `MTGSets`;
 
 CREATE TABLE `MTGSets` (
   `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
-  `Name` varchar(255) DEFAULT NULL,
-  `Cards` smallint(255) DEFAULT NULL,
-  `Released` date DEFAULT NULL,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `cards` smallint(255) unsigned NOT NULL,
+  `released` date NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `MTGSets` WRITE;
 /*!40000 ALTER TABLE `MTGSets` DISABLE KEYS */;
 
-INSERT INTO `MTGSets` (`id`, `Name`, `Cards`, `Released`)
+INSERT INTO `MTGSets` (`id`, `name`, `cards`, `released`)
 VALUES
 	(1,'Throne of Eldraine',300,'2019-10-04'),
 	(2,'Khans of Tarkir',269,'2014-09-26'),

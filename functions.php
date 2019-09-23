@@ -1,5 +1,9 @@
 <?php
 
+
+/**
+ * connects SQL database to PHP
+ */
 function connectDB()
 {
     $db = new PDO ('mysql:host=db; dbname=AlexCollection', 'root', 'password');
