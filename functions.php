@@ -42,7 +42,7 @@ function pullSetSize()
  */
 function pullSetRelease()
 {
-    $query = $db->prepare("SELECT `name` FROM `MTGSets`");
+    $query = $db->prepare("SELECT `released` FROM `MTGSets`");
     $query->setFetchMode(PDO::FETCH_ASSOC);
     $query->execute();
     $result = $query-> fetchall();
