@@ -14,12 +14,11 @@ function connectDB()
 /**
  * pulls set names from PDO
  */
-function pullSetNames()
+function pullSetNames($db)
 {
     $query = $db->prepare("SELECT `name` FROM `MTGSets`");
-    $query->setFetchMode(PDO::FETCH_ASSOC);
     $query->execute();
-    $result = $query-> fetchall();
+    $result = $query-> fetchAll();
     $sets = $result;
     return $sets;
 }
@@ -27,12 +26,11 @@ function pullSetNames()
 /**
  * pulls set size from PDO
  */
-function pullSetSize()
+function pullSetSize($db)
 {
     $query = $db->prepare("SELECT `cards` FROM `MTGSets`");
-    $query->setFetchMode(PDO::FETCH_ASSOC);
     $query->execute();
-    $result = $query-> fetchall();
+    $result = $query-> fetchAll();
     $setSize = $result;
     return $setSize;
 }
@@ -40,12 +38,11 @@ function pullSetSize()
 /**
  * pulls release dates from PDO
  */
-function pullSetRelease()
+function pullSetRelease($db)
 {
     $query = $db->prepare("SELECT `released` FROM `MTGSets`");
-    $query->setFetchMode(PDO::FETCH_ASSOC);
     $query->execute();
-    $result = $query-> fetchall();
+    $result = $query-> fetchAll();
     $releaseDate = $result;
     return $releaseDate;
 }
