@@ -19,7 +19,9 @@ $releaseDate = pullSetRelease($db);
     </head>
         <body>
 
-        <p class="container">SetCollector</p>
+        <nav class="container">
+                <h1>SetCollector</h1>
+        </nav>
 
         </body>
 </html>
