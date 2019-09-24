@@ -35,7 +35,7 @@ $sets = retrieveCardSets($db);
             Release date:<br>
             <input type="text" name="released" value="format: yyyy-mm-dd">
             <br>
-            Set name:<br>
+            # of cards:<br>
             <input type="text" name="cards" value="eg: 230">
             <br>
             <input type="submit">
