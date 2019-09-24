@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * connects SQL database to PHP
  */
