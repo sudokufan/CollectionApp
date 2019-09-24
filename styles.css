@@ -24,11 +24,6 @@ nav h1 {
 	padding-bottom: 10px;
 }
 
-.set h1 {
-	text-align: center;
-}
-
-
 .setsBody {
 	overflow: auto;
 }
@@ -37,6 +32,8 @@ nav h1 {
 	float: left;
 	width: 33%;
 	margin: 0 auto;
+	text-align: center;
+	padding: 10px;
 }
 
 /*Responsiveness*/

@@ -13,10 +13,14 @@ function connectDB()
 
 /**
  * pulls set names from PDO
+ *
+ * @param array $db the PDO connection to SQL
+ *
+ * @return string the data from SQL
  */
-function pullSetNames(array $db) :array
+function pullSetData(PDO $db) :array
 {
-    $query = $db->prepare("SELECT `name` FROM `MTGSets`");
+    $query = $db->prepare("SELECT `name`, `released`, `cards` FROM `MTGSets`");
     $query->execute();
     $result = $query-> fetchAll();
     $sets = $result;
@@ -24,25 +28,22 @@ function pullSetNames(array $db) :array
 }
 
 /**
- * pulls set size from PDO
+ * displays set data in divs
+ *
+ * @param array $sets the set data from SQL
+ *
+ * @return string the outputted divs containing data
  */
-function pullSetSize(array $db) :array
+function displaySetData(array $sets) :string
 {
-    $query = $db->prepare("SELECT `cards` FROM `MTGSets`");
-    $query->execute();
-    $result = $query-> fetchAll();
-    $setSize = $result;
-    return $setSize;
-}
+    $result = '';
 
-/**
- * pulls release dates from PDO
- */
-function pullSetRelease(array $db) :array
-{
-    $query = $db->prepare("SELECT `released` FROM `MTGSets`");
-    $query->execute();
-    $result = $query-> fetchAll();
-    $releaseDate = $result;
-    return $releaseDate;
+    foreach ($sets as $set){
+        $result .= '<div class="set"> <h1>' . $set['name'] . '</h1>
+                    <h2> Release Date: ' . $set['released'] . '</h2>
+                    <h2>' . $set['cards'] . ' cards</h2>
+                    </div>';
+    }
+
+    return $result;
 }
