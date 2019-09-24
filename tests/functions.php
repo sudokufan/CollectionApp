@@ -16,10 +16,7 @@ class StackTest extends TestCase
     }
 
     public function testFailureDisplaySetCollection() {
-        $expected = '<div class="set"> <h1></h1>
-                    <h2> Release Date: </h2>
-                    <h2> cards</h2>
-                    </div>';
+        $expected = 'Incorrect datatype; check input';
         $input = [['Yu-Gi-Oh set']];
         $case = displaySetCollection($input);
         $this->assertEquals($case, $expected);

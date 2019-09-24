@@ -24,7 +24,7 @@ $sets = retrieveCardSets($db);
 
         <div class="setsBody" class="container">
 
-            <?php echo displaySetData($sets); ?>
+            <?php echo displaySetCollection($sets); ?>
 
     </body>
 </html>
