@@ -4,7 +4,7 @@ require_once('functions.php');
 
 $db = connectDB();
 
-$sets = pullSetData($db);
+$sets = retrieveCardSets($db);
 
 ?>
 
@@ -15,20 +15,31 @@ $sets = pullSetData($db);
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>SetCollector</title>
     </head>
-        <body>
+    <body>
 
         <nav class="container">
                 <h1>SetCollector</h1>
         </nav>
 
-        <div>
-            <div class="setsBody" class="container">
 
-                <?php
+        <div class="setsBody" class="container">
 
-                echo displaySetData($sets);
+            <?php echo displaySetCollection($sets); ?>
 
-                ?>
+        </div>
 
-        </body>
+        <form>
+            Set name:<br>
+            <input type="text" name="name" value="eg: Core Set 2020">
+            <br>
+            Release date:<br>
+            <input type="text" name="released" value="format: yyyy-mm-dd">
+            <br>
+            Set name:<br>
+            <input type="text" name="cards" value="eg: 230">
+            <br>
+            <input type="submit">
+        </form>
+
+    </body>
 </html>

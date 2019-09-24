@@ -20,8 +20,7 @@ body {
 nav h1 {
 	margin: 0 auto;
 	width: 200px;
-	padding-top: 30px;
-	padding-bottom: 10px;
+	padding: 30px 0px 10px 0px;
 }
 
 .setsBody {
@@ -34,6 +33,10 @@ nav h1 {
 	margin: 0 auto;
 	text-align: center;
 	padding: 10px;
+}
+
+form {
+text-align: center;
 }
 
 /*Responsiveness*/
