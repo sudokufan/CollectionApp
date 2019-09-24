@@ -12,13 +12,13 @@ function connectDB() :PDO
 }
 
 /**
- * pulls set names from PDO
+ * requests MTG card set details from database
  *
  * @param array $db the PDO connection to SQL
  *
- * @return string the data from SQL
+ * @return array the data from SQL
  */
-function pullSetData(PDO $db) :array
+function retrieveCardSets(PDO $db) :array
 {
     $query = $db->prepare("SELECT `name`, `released`, `cards` FROM `MTGSets`");
     $query->execute();

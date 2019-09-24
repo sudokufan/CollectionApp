@@ -4,7 +4,7 @@ require_once('functions.php');
 
 $db = connectDB();
 
-$sets = pullSetData($db);
+$sets = retrieveCardSets($db);
 
 ?>
 
