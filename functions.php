@@ -14,35 +14,31 @@ function connectDB()
 /**
  * pulls set names from PDO
  */
-function pullSetNames(array $db) :array
+function pullSetData(array $db) :array
 {
-    $query = $db->prepare("SELECT `name` FROM `MTGSets`");
+    $query = $db->prepare("SELECT `name`, `cards`, `released` FROM `MTGSets`");
     $query->execute();
     $result = $query-> fetchAll();
     $sets = $result;
     return $sets;
 }
 
-/**
- * pulls set size from PDO
- */
-function pullSetSize(array $db) :array
-{
-    $query = $db->prepare("SELECT `cards` FROM `MTGSets`");
-    $query->execute();
-    $result = $query-> fetchAll();
-    $setSize = $result;
-    return $setSize;
+function
+
+$car['make']
+
+function sayHi(array $names) :string {
+
+    //create an empty string in a var to catch the output into
+    $result = '';
+
+    //loop over the names and concatenate each one as a p tag onto the existing result variable
+    //we dont define result inside the loop otherwise it would be overwritten each time
+    foreach ($names as $name){
+        $result .= '<p>Hello ' . $name . '</p>';
+    }
+
+    //return a giant string with all p tags concatenated together in it.
+    return $result;
 }
 
-/**
- * pulls release dates from PDO
- */
-function pullSetRelease(array $db) :array
-{
-    $query = $db->prepare("SELECT `released` FROM `MTGSets`");
-    $query->execute();
-    $result = $query-> fetchAll();
-    $releaseDate = $result;
-    return $releaseDate;
-}

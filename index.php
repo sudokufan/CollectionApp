@@ -4,9 +4,7 @@ require_once('functions.php');
 
 $db = connectDB();
 
-$sets = pullSetNames($db);
-$setSize = pullSetSize($db);
-$releaseDate = pullSetRelease($db);
+$sets = pullSetData($db);
 
 ?>
 
@@ -25,6 +23,12 @@ $releaseDate = pullSetRelease($db);
 
         <div>
             <div class="setsBody" class="container">
+
+                <?php
+
+                ?>
+
+
                 <div class="set">
                     <header><h1>SET NAME</h1></header>
 <!--   img tag will show the set symbol here    <img> -->
