@@ -36,6 +36,10 @@ nav h1 {
 	padding: 10px;
 }
 
+form {
+text-align: center;
+}
+
 /*Responsiveness*/
 
 @media screen and (max-width: 1200px) {

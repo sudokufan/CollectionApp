@@ -29,9 +29,15 @@ $sets = retrieveCardSets($db);
         </div>
 
         <form>
-            <input type="password" name="password">
-            <input type="password" name="password">
-            <input type="password" name="password">
+            Set name:<br>
+            <input type="text" name="name" value="eg: Core Set 2020">
+            <br>
+            Release date:<br>
+            <input type="text" name="released" value="format: yyyy-mm-dd">
+            <br>
+            Set name:<br>
+            <input type="text" name="cards" value="eg: 230">
+            <br>
             <input type="submit">
         </form>
 
