@@ -1,0 +1,39 @@
+<?php
+
+require_once('functions.php');
+
+$db = connectDB();
+
+$sets = retrieveCardSets($db);
+
+?>
+
+<html lang="en-GB">
+    <head>
+        <link rel="stylesheet" type="text/css" href="normalize.css" />
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SetCollector</title>
+    </head>
+    <body>
+
+        <nav class="container">
+                <h1>SetCollector</h1>
+        </nav>
+
+
+        <div class="setsBody" class="container">
+
+            <?php echo displaySetCollection($sets); ?>
+
+        </div>
+
+        <form>
+            <input type="password" name="password">
+            <input type="password" name="password">
+            <input type="password" name="password">
+            <input type="submit">
+        </form>
+
+    </body>
+</html>
