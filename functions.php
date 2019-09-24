@@ -14,7 +14,7 @@ function connectDB()
 /**
  * pulls set names from PDO
  */
-function pullSetNames($db)
+function pullSetNames(array $db) :array
 {
     $query = $db->prepare("SELECT `name` FROM `MTGSets`");
     $query->execute();
@@ -26,7 +26,7 @@ function pullSetNames($db)
 /**
  * pulls set size from PDO
  */
-function pullSetSize($db)
+function pullSetSize(array $db) :array
 {
     $query = $db->prepare("SELECT `cards` FROM `MTGSets`");
     $query->execute();
@@ -38,7 +38,7 @@ function pullSetSize($db)
 /**
  * pulls release dates from PDO
  */
-function pullSetRelease($db)
+function pullSetRelease(array $db) :array
 {
     $query = $db->prepare("SELECT `released` FROM `MTGSets`");
     $query->execute();
