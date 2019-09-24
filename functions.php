@@ -26,9 +26,9 @@ function retrieveCardSets(PDO $db) :array {
 }
 
 /**
- * an indexed array of assoc arrays of card sets
+ * displays set collection data on the front end
  *
- * @param array $sets the set data from SQL
+ * @param array $sets an indexed array of assoc arrays of card sets
  *
  * @return string the outputted divs containing data
  */

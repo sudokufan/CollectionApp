@@ -26,5 +26,14 @@ $sets = retrieveCardSets($db);
 
             <?php echo displaySetCollection($sets); ?>
 
+        </div>
+
+        <form>
+            <input type="password" name="password">
+            <input type="password" name="password">
+            <input type="password" name="password">
+            <input type="submit">
+        </form>
+
     </body>
 </html>
