@@ -46,6 +46,5 @@ function displaySetCollection(array $sets) :string {
             return 'Incorrect datatype; check input';
         }
     }
-
     return $result;
 }
