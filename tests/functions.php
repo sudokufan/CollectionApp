@@ -3,21 +3,24 @@
 require_once ('../functions.php');
 use PHPUnit\Framework\TestCase;
 
-class StackTest extends TextCase
+class StackTest extends TestCase
 {
     public function testSuccessDisplaySetCollection() {
-        $expected = '<div class="set"> <h1>' . $set['name'] . '</h1>
-                     <h2> Release Date: ' . $set['released'] . '</h2>
-                     <h2>' . $set['cards'] . ' cards</h2>
-                     </div>';
-        $input = [['field'=>'value',]];
+        $expected = '<div class="set"> <h1>value</h1>
+                    <h2> Release Date: value</h2>
+                    <h2>value cards</h2>
+                    </div>';
+        $input = [['name'=>'value', 'released'=>'value', 'cards'=>'value']];
         $case = displaySetCollection($input);
         $this->assertEquals($case, $expected);
     }
 
     public function testFailureDisplaySetCollection() {
-        $expected = 'Error generating HTML';
-        $input = ['Yu-Gi-Oh set'];
+        $expected = '<div class="set"> <h1></h1>
+                    <h2> Release Date: </h2>
+                    <h2> cards</h2>
+                    </div>';
+        $input = [['Yu-Gi-Oh set']];
         $case = displaySetCollection($input);
         $this->assertEquals($case, $expected);
     }
