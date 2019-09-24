@@ -20,7 +20,7 @@ function connectDB()
  */
 function pullSetData(PDO $db) :array
 {
-    $query = $db->prepare("SELECT `name`, `released`, `cards`, FROM `MTGSets`");
+    $query = $db->prepare("SELECT `name`, `released`, `cards` FROM `MTGSets`");
     $query->execute();
     $result = $query-> fetchAll();
     $sets = $result;
@@ -34,13 +34,14 @@ function pullSetData(PDO $db) :array
  *
  * @return string the outputted divs containing data
  */
-function displaySetData(array $sets) :string {
+function displaySetData(array $sets) :string
+{
     $result = '';
 
     foreach ($sets as $set){
         $result .= '<div class="set"> <h1>' . $set['name'] . '</h1>
-                    <h1>' . $set['release'] . '</h1>
-                    <h1>' . $set['cards'] . '</h1>
+                    <h2> Release Date: ' . $set['released'] . '</h2>
+                    <h2>' . $set['cards'] . ' cards</h2>
                     </div>';
     }
 
