@@ -26,60 +26,62 @@ $sets = pullSetData($db);
 
                 <?php
 
+                displaySetData($sets);
+
                 ?>
 
 
-                <div class="set">
-                    <header><h1>SET NAME</h1></header>
-<!--   img tag will show the set symbol here    <img> -->
-                    <h1>Release Date</h1>
-                    <h1># of cards</h1>
-                </div>
-
-                <div class="set">
-                    <header><h1>SET NAME #2</h1></header>
-                    <!--   img tag will show the set symbol here    <img> -->
-                    <h1>Release Date</h1>
-                    <h1># of cards</h1>
-                </div>
-
-                <div class="set">
-                    <header><h1>SET NAME #3</h1></header>
-                    <!--   img tag will show the set symbol here    <img> -->
-                    <h1>Release Date</h1>
-                    <h1># of cards</h1>
-                </div>
-
-                <div class="set">
-                    <header><h1>SET NAME #4</h1></header>
-                    <!--   img tag will show the set symbol here    <img> -->
-                    <h1>Release Date</h1>
-                    <h1># of cards</h1>
-                </div>
-
-                <div class="set">
-                    <header><h1>SET NAME #5</h1></header>
-                    <!--   img tag will show the set symbol here    <img> -->
-                    <h1>Release Date</h1>
-                    <h1># of cards</h1>
-                </div>
-
-                <div class="set">
-                    <header><h1>SET NAME #6</h1></header>
-                    <!--   img tag will show the set symbol here    <img> -->
-                    <h1>Release Date</h1>
-                    <h1># of cards</h1>
-                </div>
-
-                <div class="set">
-                    <header><h1>SET NAME #7</h1></header>
-                    <!--   img tag will show the set symbol here    <img> -->
-                    <h1>Release Date</h1>
-                    <h1># of cards</h1>
-                </div>
-
-             </div>
-        </div>
+<!--                <div class="set">-->
+<!--                    <header><h1>SET NAME</h1></header>-->
+<!--<!--   img tag will show the set symbol here    <img> -->-->
+<!--                    <h1>Release Date</h1>-->
+<!--                    <h1># of cards</h1>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="set">-->
+<!--                    <header><h1>SET NAME #2</h1></header>-->
+<!--                    <!--   img tag will show the set symbol here    <img> -->-->
+<!--                    <h1>Release Date</h1>-->
+<!--                    <h1># of cards</h1>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="set">-->
+<!--                    <header><h1>SET NAME #3</h1></header>-->
+<!--                    <!--   img tag will show the set symbol here    <img> -->-->
+<!--                    <h1>Release Date</h1>-->
+<!--                    <h1># of cards</h1>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="set">-->
+<!--                    <header><h1>SET NAME #4</h1></header>-->
+<!--                    <!--   img tag will show the set symbol here    <img> -->-->
+<!--                    <h1>Release Date</h1>-->
+<!--                    <h1># of cards</h1>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="set">-->
+<!--                    <header><h1>SET NAME #5</h1></header>-->
+<!--                    <!--   img tag will show the set symbol here    <img> -->-->
+<!--                    <h1>Release Date</h1>-->
+<!--                    <h1># of cards</h1>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="set">-->
+<!--                    <header><h1>SET NAME #6</h1></header>-->
+<!--                    <!--   img tag will show the set symbol here    <img> -->-->
+<!--                    <h1>Release Date</h1>-->
+<!--                    <h1># of cards</h1>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="set">-->
+<!--                    <header><h1>SET NAME #7</h1></header>-->
+<!--                    <!--   img tag will show the set symbol here    <img> -->-->
+<!--                    <h1>Release Date</h1>-->
+<!--                    <h1># of cards</h1>-->
+<!--                </div>-->
+<!---->
+<!--             </div>-->
+<!--        </div>-->
 
         </body>
 </html>

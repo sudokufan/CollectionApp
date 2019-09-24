@@ -13,32 +13,36 @@ function connectDB()
 
 /**
  * pulls set names from PDO
+ *
+ * @param array $db the PDO connection to SQL
+ *
+ * @return string the data from SQL
  */
-function pullSetData(array $db) :array
+function pullSetData(PDO $db) :array
 {
-    $query = $db->prepare("SELECT `name`, `cards`, `released` FROM `MTGSets`");
+    $query = $db->prepare("SELECT `name`, `released`, `cards`, FROM `MTGSets`");
     $query->execute();
     $result = $query-> fetchAll();
     $sets = $result;
     return $sets;
 }
 
-function
-
-$car['make']
-
-function sayHi(array $names) :string {
-
-    //create an empty string in a var to catch the output into
+/**
+ * displays set data in divs
+ *
+ * @param array $sets the set data from SQL
+ *
+ * @return string the outputted divs containing data
+ */
+function displaySetData(array $sets) :string {
     $result = '';
 
-    //loop over the names and concatenate each one as a p tag onto the existing result variable
-    //we dont define result inside the loop otherwise it would be overwritten each time
-    foreach ($names as $name){
-        $result .= '<p>Hello ' . $name . '</p>';
+    foreach ($sets as $set){
+        $result .= '<div class="set"> <h1>' . $set['name'] . '</h1>
+                    <h1>' . $set['release'] . '</h1>
+                    <h1>' . $set['cards'] . '</h1>
+                    </div>';
     }
 
-    //return a giant string with all p tags concatenated together in it.
     return $result;
 }
-
