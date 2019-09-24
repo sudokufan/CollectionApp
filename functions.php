@@ -4,45 +4,48 @@
 /**
  * connects SQL database to PHP
  */
-function connectDB()
-{
+function connectDB() :PDO {
     $db = new PDO ('mysql:host=db; dbname=AlexCollection', 'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;
 }
 
 /**
- * pulls set names from PDO
+ * requests card set details from database
  *
  * @param array $db the PDO connection to SQL
  *
- * @return string the data from SQL
+ * @return array the data from SQL
  */
-function pullSetData(PDO $db) :array
-{
+function retrieveCardSets(PDO $db) :array {
     $query = $db->prepare("SELECT `name`, `released`, `cards` FROM `MTGSets`");
     $query->execute();
     $result = $query-> fetchAll();
     $sets = $result;
-    return $sets;
+    return $result;
 }
 
 /**
- * displays set data in divs
+ * an indexed array of assoc arrays of card sets
  *
  * @param array $sets the set data from SQL
  *
  * @return string the outputted divs containing data
  */
-function displaySetData(array $sets) :string
-{
+function displaySetCollection(array $sets) :string {
     $result = '';
 
-    foreach ($sets as $set){
-        $result .= '<div class="set"> <h1>' . $set['name'] . '</h1>
+    if (is_array($sets[0]) == true) {
+        if (array_key_exists("name", $sets[0])) {
+            foreach ($sets as $set){
+                $result .= '<div class="set"> <h1>' . $set['name'] . '</h1>
                     <h2> Release Date: ' . $set['released'] . '</h2>
                     <h2>' . $set['cards'] . ' cards</h2>
                     </div>';
+            }
+        } else {
+            return 'Incorrect datatype; check input';
+        }
     }
 
     return $result;
