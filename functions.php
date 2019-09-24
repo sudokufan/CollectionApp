@@ -32,8 +32,23 @@ function retrieveCardSets(PDO $db) :array {
  *
  * @return string the outputted divs containing data
  */
-function displaySetData(array $sets) :string {
+function displaySetCollection(array $sets) :string {
     $result = '';
+
+    if (is_array($collection[0]) == true) {
+        if (array_key_exists("type", $car)) {
+            foreach ($car as $key => $attribute) {
+                $htmlOut .= "<div class=\"tableRow\">";
+                $htmlOut .= "<div class=\"dataElement tableHeader\">$rowNames[$key]</div>";
+                $htmlOut .= "<div class=\"dataElement\">" . $car[$key] . "</div>";
+                $htmlOut .= "</div>";
+            }
+        } else {
+            return 'Error generating HTML from collection';
+        }
+    } else {
+        return 'Error generating HTML from collection';
+
     foreach ($sets as $set){
         $result .= '<div class="set"> <h1>' . $set['name'] . '</h1>
                     <h2> Release Date: ' . $set['released'] . '</h2>
