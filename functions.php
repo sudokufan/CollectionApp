@@ -50,11 +50,11 @@ function displaySetCollection(array $sets) :string {
 }
 
 function addNewSet(array $db) :array {
-    ​$query = $this->db->prepare("INSERT INTO `MTGSets` (`name`, `released`, `cards`,) VALUES(:name, :released, :cards)");
+    ​$query = $db->prepare("INSERT INTO `MTGSets` (`name`, `released`, `cards`,) VALUES(:name, :released, :cards)");
 
-    $query->bindParam(':name', $name);
-    $query->bindParam(':released', $released);
-    $query->bindParam(':cards', $cards);
+    $query->bindParam(':name', $_POST[name]);
+    $query->bindParam(':released', $_POST[released]);
+    $query->bindParam(':cards', $_POST[cards]);
 
     $query->execute();
 }
