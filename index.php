@@ -28,15 +28,15 @@ $sets = retrieveCardSets($db);
 
         </div>
 
-        <form>
+        <form method=post action="newdata.php">
             Set name:<br>
-            <input type="text" name="name" value="eg: Core Set 2020">
+            <input type="text" name="name" placeholder="eg: Core Set 2020" required>
             <br>
             Release date:<br>
-            <input type="text" name="released" value="format: yyyy-mm-dd">
+            <input type="text" name="released" placeholder="format: yyyy-mm-dd" required>
             <br>
             # of cards:<br>
-            <input type="text" name="cards" value="eg: 230">
+            <input type="number" min="1" max="500" name="cards" placeholder="eg: 230" required>
             <br>
             <input type="submit">
         </form>
