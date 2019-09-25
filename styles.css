@@ -35,9 +35,9 @@ nav h1 {
 	padding: 10px;
 }
 
-form {
-	width: 700px ;
+form input {
 	margin: 0 auto;
+	width: 200px;
 }
 
 /*Responsiveness*/
