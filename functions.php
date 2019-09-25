@@ -49,7 +49,13 @@ function displaySetCollection(array $sets) :string {
     return $result;
 }
 
-
+/**
+ * adds new card set to the page
+ *
+ * @param array $newSet the set info captured from user form
+ *
+ * @param PDO $db connection to database where set info is stored
+ */
 function addNewSet(array $newSet, PDO $db) {
 
     if (isset($newSet)) {
@@ -57,10 +63,6 @@ function addNewSet(array $newSet, PDO $db) {
         $statement = "INSERT INTO `MTGSets` (`name`, `cards`, `released`) VALUES (?, ?, ?)";
 
         $query = $db->prepare($statement);
-
-//        $query->bindParam(':name', $newSet['name']);
-//        $query->bindParam(':released', $newSet['released']);
-//        $query->bindParam(':cards', $newSet['cards']);
 
         $query->execute([$newSet['name'], $newSet['cards'], $newSet['released']]);
         
