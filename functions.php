@@ -46,6 +46,27 @@ function displaySetCollection(array $sets) :string {
             return 'Incorrect datatype; check input';
         }
     }
-
     return $result;
+}
+
+/**
+ * adds new card set to the page
+ *
+ * @param array $newSet the set info captured from user form
+ *
+ * @param PDO $db connection to database where set info is stored
+ */
+function addNewSet(array $newSet, PDO $db) {
+
+    if (isset($newSet)) {
+
+        $statement = "INSERT INTO `MTGSets` (`name`, `cards`, `released`) VALUES (?, ?, ?)";
+
+        $query = $db->prepare($statement);
+
+        $query->execute([$newSet['name'], $newSet['cards'], $newSet['released']]);
+        
+    } else {
+        echo 'Incorrect data.';
+    }
 }
