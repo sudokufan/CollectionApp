@@ -30,13 +30,13 @@ $sets = retrieveCardSets($db);
 
         <form action=”newdata.php” method=”post”>
             Set name:<br>
-            <input type="text" name="name" value="eg: Core Set 2020">
+            <input type="text" name="name" placeholder="eg: Core Set 2020">
             <br>
             Release date:<br>
-            <input type="text" name="released" value="format: yyyy-mm-dd">
+            <input type="text" name="released" placeholder="format: yyyy-mm-dd">
             <br>
             # of cards:<br>
-            <input type="text" name="cards" value="eg: 230">
+            <input type="text" name="cards" placeholder="eg: 230">
             <br>
             <input type="submit">
         </form>
