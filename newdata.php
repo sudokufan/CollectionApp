@@ -4,6 +4,6 @@ require_once('functions.php');
 
 $db = connectDB();
 
-$newSet = $_POST;
+//$newSet = $_POST;
 
-addNewSet($newSet, $db);
+addNewSet($_POST, $db);

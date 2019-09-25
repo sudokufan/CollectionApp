@@ -50,9 +50,9 @@ function displaySetCollection(array $sets) :string {
 }
 
 
-function addNewSet(array $newSet, PDO $db) :array{
+function addNewSet(array $newSet, PDO $db) :array {
 
-    if (isset($newSet['name, released, cards'])) {
+    if ($newSet[['name', 'released', 'cards']]) {
 
         $statement = "INSERT INTO `MTGSets` (`name`, `released`, `cards`,) VALUES(:name, :released, :cards)";
 
