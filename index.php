@@ -28,7 +28,7 @@ $sets = retrieveCardSets($db);
 
         </div>
 
-        <form method=post action="index.php">
+        <form method=post action="newdata.php">
             Set name:<br>
             <input type="text" name="name" placeholder="eg: Core Set 2020" required>
             <br>
