@@ -48,3 +48,13 @@ function displaySetCollection(array $sets) :string {
     }
     return $result;
 }
+
+function addNewSet(array $db) :array {
+    ​$query = $this->db->prepare("INSERT INTO `MTGSets` (`name`, `released`, `cards`,) VALUES(:name, :released, :cards)");
+
+    $query->bindParam(':name', $name);
+    $query->bindParam(':released', $released);
+    $query->bindParam(':cards', $cards);
+
+    $query->execute();
+}
