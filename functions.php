@@ -49,8 +49,18 @@ function displaySetCollection(array $sets) :string {
     return $result;
 }
 
+if (isset($_POST['name', 'released', 'cards'])) {
+
+    if ($password === $_POST['password']) {
+        $_SESSION['loggedIn'] = true;
+        header('Location: dashboard.php');
+    } else {
+        echo 'Password entered incorrectly.';
+    }
+
+
 function addNewSet(array $db) :array {
-    ​$query = $db->prepare("INSERT INTO `MTGSets` (`name`, `released`, `cards`,) VALUES(:name, :released, :cards)");
+    ​$query = $this->$db->prepare("INSERT INTO `MTGSets` (`name`, `released`, `cards`,) VALUES(:name, :released, :cards)");
 
     $query->bindParam(':name', $_POST[name]);
     $query->bindParam(':released', $_POST[released]);
