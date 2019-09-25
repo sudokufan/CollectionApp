@@ -43,10 +43,34 @@ function displaySetCollection(array $sets) :string {
                     </div>';
             }
         } else {
-            return 'Incorrect datatype; check input';
+            return 'Incorrect SQL data entered; check database';
         }
     }
     return $result;
+}
+
+
+/**
+ * checks new set inputs are valid
+ *
+ * @param array $newSet the set info captured from user form
+ *
+ * @return bool true/false conclusion for user input validity
+ */
+function checkUserInput(array $newSet) :bool {
+    $valid = "";
+
+    if (is_string($newSet['name']) && (strlen($newSet['name']) < 255)){
+        $valid = true;
+    } elseif (is_int((int)$newSet['cards']) && (strlen($newSet['name']) < 255) && ($valid === true)){
+        $valid = true;
+    } elseif (is_string($newSet['cards']) && (strlen($newSet['name']) < 9) && ($valid === true)){
+        $valid = true;
+    } else {
+        $valid = false;
+    }
+
+    return $valid;
 }
 
 /**
@@ -58,7 +82,7 @@ function displaySetCollection(array $sets) :string {
  */
 function addNewSet(array $newSet, PDO $db) {
 
-    if (isset($newSet)) {
+    if (checkUserInput($newSet)) {
 
         $statement = "INSERT INTO `MTGSets` (`name`, `cards`, `released`) VALUES (?, ?, ?)";
 
@@ -67,6 +91,6 @@ function addNewSet(array $newSet, PDO $db) {
         $query->execute([$newSet['name'], $newSet['cards'], $newSet['released']]);
         
     } else {
-        echo 'Incorrect data.';
+        return 'Incorrect data.';
     }
 }

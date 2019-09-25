@@ -6,6 +6,8 @@ $db = connectDB();
 
 $newSet = $_POST;
 
+checkUserInput($newSet);
+
 addNewSet($newSet, $db);
 
 header('Location: index.php');
