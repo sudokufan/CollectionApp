@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once('functions.php');
 
 $db = connectDB();
@@ -28,7 +30,7 @@ $sets = retrieveCardSets($db);
 
         </div>
 
-        <form method=post action="newdata.php">
+        <form method=post action="index.php">
             Set name:<br>
             <input type="text" name="name" placeholder="eg: Core Set 2020" required>
             <br>
@@ -39,7 +41,7 @@ $sets = retrieveCardSets($db);
             <input type="number" min="1" max="500" name="cards" placeholder="eg: 230" required>
             <br>
             <input type="submit">
-        </form>
+            </form>
 
     </body>
 </html>
