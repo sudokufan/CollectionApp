@@ -4,6 +4,9 @@ require_once('functions.php');
 
 $db = connectDB();
 
-//$newSet = $_POST;
+$newSet = $_POST;
 
-addNewSet($_POST, $db);
+addNewSet($newSet, $db);
+
+header('Location: index.php');
+?>

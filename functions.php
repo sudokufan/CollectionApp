@@ -50,21 +50,19 @@ function displaySetCollection(array $sets) :string {
 }
 
 
-function addNewSet(array $newSet, PDO $db) :array {
+function addNewSet(array $newSet, PDO $db) {
 
-    var_dump($newSet);
+    if (isset($newSet)) {
 
-    if ($newSet[['name', 'released', 'cards']]) {
-
-        $statement = "INSERT INTO `MTGSets` (`name`, `released`, `cards`,) VALUES(:name, :released, :cards)";
+        $statement = "INSERT INTO `MTGSets` (`name`, `cards`, `released`) VALUES (?, ?, ?)";
 
         $query = $db->prepare($statement);
 
-        $query->bindParam(':name', $_POST[name]);
-        $query->bindParam(':released', $_POST[released]);
-        $query->bindParam(':cards', $_POST[cards]);
+//        $query->bindParam(':name', $newSet['name']);
+//        $query->bindParam(':released', $newSet['released']);
+//        $query->bindParam(':cards', $newSet['cards']);
 
-        $query->execute([$newSet['name'],$newSet['released'], $newSet['cards']]);
+        $query->execute([$newSet['name'], $newSet['cards'], $newSet['released']]);
         
     } else {
         echo 'Incorrect data.';
