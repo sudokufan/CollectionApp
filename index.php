@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 require_once('functions.php');
 
 $db = connectDB();
@@ -42,6 +40,6 @@ $sets = retrieveCardSets($db);
             <br>
             <input type="submit">
             </form>
-
+  
     </body>
 </html>
