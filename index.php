@@ -39,7 +39,7 @@ $sets = retrieveCardSets($db);
             <input type="number" min="1" max="500" name="cards" placeholder="eg: 230" required>
             <br>
             <input type="submit">
-        </form>
+            </form>
 
     </body>
 </html>

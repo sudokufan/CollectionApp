@@ -35,9 +35,10 @@ nav h1 {
 	padding: 10px;
 }
 
-form input {
+form {
 	margin: 0 auto;
 	width: 200px;
+	text-align: center;
 }
 
 /*Responsiveness*/
