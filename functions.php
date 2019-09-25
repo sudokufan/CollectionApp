@@ -5,7 +5,7 @@
  */
 function connectDB() :PDO {
     $db = new PDO ('mysql:host=db; dbname=AlexCollection', 'root', 'password');
-//    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;
 }
 
