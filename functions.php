@@ -52,14 +52,14 @@ function displaySetCollection(array $sets) :string {
 
 function addNewSet(array $newSet, PDO $db) :array{
 
-    if (isset($_POST['name', 'released', 'cards'])) {
-        ​$query = $this->$db->prepare("INSERT INTO `MTGSets` (`name`, `released`, `cards`,) VALUES(:name, :released, :cards)");
+    if (isset($newSet['name, released, cards'])) {
+        $query = $this->$db->prepare("INSERT INTO `MTGSets` (`name`, `released`, `cards`,) VALUES(:name, :released, :cards)");
 
-    $query->bindParam(':name', $_POST[name]);
-    $query->bindParam(':released', $_POST[released]);
-    $query->bindParam(':cards', $_POST[cards]);
+        $query->bindParam(':name', $_POST[name]);
+        $query->bindParam(':released', $_POST[released]);
+        $query->bindParam(':cards', $_POST[cards]);
 
-    $query->execute();
+        $query->execute();
     } else {
         echo 'Incorrect data.';
     }

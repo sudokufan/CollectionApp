@@ -6,4 +6,4 @@ $db = connectDB();
 
 $newSet = $_POST;
 
-addNewSet($newSet);
+addNewSet($newSet, $db);
