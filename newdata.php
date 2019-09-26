@@ -6,11 +6,12 @@ $db = connectDB();
 
 $newSet = $_POST;
 
-if (checkUserInput($newSet) === false) {
+$thing = checkUserInput($newSet);
+
+$errorCheck = addNewSet($newSet, $db);
+
+if ( $errorCheck === false) {
     header('Location: index.php?error=wrongUser');
+} else {
+    header('Location: index.php');
 }
-
-addNewSet($newSet, $db);
-
-//header('Location: index.php');
-?>

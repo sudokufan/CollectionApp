@@ -6,10 +6,6 @@ $db = connectDB();
 
 $sets = retrieveCardSets($db);
 
-if(isset($_GET['error'])) {
-    echo '$error';
-}
-
 ?>
 
 <html lang="en-GB">
@@ -33,6 +29,9 @@ if(isset($_GET['error'])) {
         </div>
 
         <form method=post action="newdata.php">
+            <?php if(isset($_GET['error'])) {
+                echo 'ERROR: please check info and try again<br><br>';
+            } ?>
             Set name:<br>
             <input type="text" name="name" placeholder="eg: Core Set 2020" required>
             <br>

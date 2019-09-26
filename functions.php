@@ -58,17 +58,21 @@ function displaySetCollection(array $sets) :string {
  */
 function checkUserInput(array $newSet) :bool {
     $valid = "";
-
-    if (is_string($newSet['name']) && (strlen($newSet['name']) < 255)){
-        $valid = true;
-    } elseif (is_int((int)$newSet['cards']) && (strlen($newSet['name']) < 255) && ($valid === true)){
-        $valid = true;
-    } elseif (is_string($newSet['released']) && (strlen($newSet['name']) < 9) && ($valid === true)){
-        $valid = true;
-    } else {
+    if (is_string($newSet['name']) === false) {
         $valid = false;
+    } elseif (strlen($newSet['name']) > 255) {
+        $valid = false;
+    } elseif (is_int((int)$newSet['cards']) === false) {
+        $valid = false;
+    } elseif (strlen($newSet['cards']) > 255) {
+        $valid = false;
+    } elseif (is_string($newSet['released']) === false) {
+        $valid = false;
+    } elseif (strlen($newSet['released']) > 10) {
+        $valid = false;
+    } else {
+        $valid = true;
     }
-
     return $valid;
 }
 
@@ -81,11 +85,7 @@ function checkUserInput(array $newSet) :bool {
  */
 function addNewSet(array $newSet, PDO $db) {
 
-    if (checkUserInput($newSet)) {
         $statement = "INSERT INTO `MTGSets` (`name`, `cards`, `released`) VALUES (?, ?, ?)";
         $query = $db->prepare($statement);
-        $query->execute([$newSet['name'], $newSet['cards'], $newSet['released']]);
-    } else {
-        return 'Incorrect data.';
-    }
+        return $query->execute([$newSet['name'], $newSet['cards'], $newSet['released']]);
 }
