@@ -60,18 +60,25 @@ function checkUserInput(array $newSet) :bool {
     $valid = "";
     if (is_string($newSet['name']) === false) {
         $valid = false;
+        $failedAt = 'name';
     } elseif (strlen($newSet['name']) > 255) {
         $valid = false;
+        $failedAt = 'name';
     } elseif (is_int((int)$newSet['cards']) === false) {
         $valid = false;
+        $failedAt = 'cards';
     } elseif (strlen($newSet['cards']) > 255) {
         $valid = false;
+        $failedAt = 'cards';
     } elseif (is_string($newSet['released']) === false) {
         $valid = false;
+        $failedAt = 'released';
     } elseif (strlen($newSet['released']) > 10) {
         $valid = false;
+        $failedAt = 'released';
     } else {
         $valid = true;
+        $failedAt = "NA";
     }
     return $valid;
 }

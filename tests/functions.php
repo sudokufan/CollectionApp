@@ -32,7 +32,7 @@ class StackTest extends TestCase
 
     public function testSuccessCheckUserInput() {
         $expected = ($valid = true);
-        $input = [['name'=>'value', 'released'=>'1999-08-03', 'cards'=>202]];
+        $input = ['name'=>'Ixalan', 'cards'=>289, 'released'=>'2018-04-27'];
         $case = checkUserInput($input);
         $this->assertEquals($expected, $case);
     }
