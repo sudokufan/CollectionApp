@@ -49,7 +49,6 @@ function displaySetCollection(array $sets) :string {
     return $result;
 }
 
-
 /**
  * checks new set inputs are valid
  *
@@ -83,15 +82,9 @@ function checkUserInput(array $newSet) :bool {
 function addNewSet(array $newSet, PDO $db) {
 
     if (checkUserInput($newSet)) {
-
         $statement = "INSERT INTO `MTGSets` (`name`, `cards`, `released`) VALUES (?, ?, ?)";
-
         $query = $db->prepare($statement);
-
         $query->execute([$newSet['name'], $newSet['cards'], $newSet['released']]);
-
-
-        
     } else {
         return 'Incorrect data.';
     }

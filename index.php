@@ -6,6 +6,10 @@ $db = connectDB();
 
 $sets = retrieveCardSets($db);
 
+if(isset($_GET['error'])) {
+    echo '$error';
+}
+
 ?>
 
 <html lang="en-GB">
