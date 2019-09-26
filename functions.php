@@ -58,7 +58,7 @@ function displaySetCollection(array $sets) :string {
  */
 function checkUserInput(array $newSet) :bool {
     $valid = "";
-    
+
     if (is_string($newSet['name']) === false) {
         $valid = false;
     } elseif (strlen($newSet['name']) > 255) {
