@@ -12,14 +12,14 @@ class StackTest extends TestCase
                     </div>';
         $input = [['name'=>'value', 'released'=>'value', 'cards'=>'value']];
         $case = displaySetCollection($input);
-        $this->assertEquals($case, $expected);
+        $this->assertEquals($expected, $case);
     }
 
     public function testFailureDisplaySetCollection() {
         $expected = 'Incorrect SQL data entered; check database';
         $input = [['Yu-Gi-Oh set']];
         $case = displaySetCollection($input);
-        $this->assertEquals($case, $expected);
+        $this->assertEquals($expected, $case);
     }
 
     public function testMalformedDisplaySetCollection() {
@@ -32,16 +32,16 @@ class StackTest extends TestCase
 
     public function testSuccessCheckUserInput() {
         $expected = ($valid = true);
-        $input = [['name'=>'value', 'released'=>'value', 'cards'=>'value']];
+        $input = [['name'=>'value', 'released'=>'1999-08-03', 'cards'=>202]];
         $case = checkUserInput($input);
-        $this->assertEquals($case, $expected);
+        $this->assertEquals($expected, $case);
     }
 
     public function testFailureCheckUserInput() {
         $expected = ($valid = false);
         $input = [['Yu-Gi-Oh set']];
         $case = checkUserInput($input);
-        $this->assertEquals($case, $expected);
+        $this->assertEquals($expected, $case);
     }
 
     public function testMalformedCheckUserInput() {
