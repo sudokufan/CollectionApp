@@ -64,7 +64,7 @@ function checkUserInput(array $newSet) :bool {
         $valid = true;
     } elseif (is_int((int)$newSet['cards']) && (strlen($newSet['name']) < 255) && ($valid === true)){
         $valid = true;
-    } elseif (is_string($newSet['cards']) && (strlen($newSet['name']) < 9) && ($valid === true)){
+    } elseif (is_string($newSet['released']) && (strlen($newSet['name']) < 9) && ($valid === true)){
         $valid = true;
     } else {
         $valid = false;
