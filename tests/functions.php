@@ -16,7 +16,7 @@ class StackTest extends TestCase
     }
 
     public function testFailureDisplaySetCollection() {
-        $expected = 'Incorrect datatype; check input';
+        $expected = 'Incorrect SQL data entered; check database';
         $input = [['Yu-Gi-Oh set']];
         $case = displaySetCollection($input);
         $this->assertEquals($case, $expected);
@@ -37,14 +37,14 @@ class StackTest extends TestCase
         $this->assertEquals($case, $expected);
     }
 
-    public function testFailureDisplaySetCollection() {
+    public function testFailureCheckUserInput() {
         $expected = ($valid = false);
         $input = [['Yu-Gi-Oh set']];
         $case = checkUserInput($input);
         $this->assertEquals($case, $expected);
     }
 
-    public function testMalformedDisplaySetCollection() {
+    public function testMalformedCheckUserInput() {
         $input = 'Ixalan, 289, 2018-04-27';
         $this->expectException(TypeError::class);
         checkUserInput($input);
