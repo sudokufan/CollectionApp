@@ -17,8 +17,6 @@ if ($userChecked = true) {
     } else {
         header('Location: index.php');
     }
-
-    else {
-        header('Location: index.php?error=wrongUser');
-    }
+} else {
+    header('Location: index.php?error=wrongUser');
 }
