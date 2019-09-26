@@ -28,12 +28,21 @@ $sets = retrieveCardSets($db);
 
         </div>
 
-        <form>
-            <input type="password" name="password">
-            <input type="password" name="password">
-            <input type="password" name="password">
+        <form method=post action="newdata.php">
+            <?php if(isset($_GET['error'])) {
+                echo 'ERROR: please check info and try again<br><br>';
+            } ?>
+            Set name:<br>
+            <input type="text" name="name" placeholder="eg: Core Set 2020" required>
+            <br>
+            Release date:<br>
+            <input type="text" name="released" placeholder="format: yyyy-mm-dd" required>
+            <br>
+            # of cards:<br>
+            <input type="number" min="1" max="500" name="cards" placeholder="eg: 230" required>
+            <br>
             <input type="submit">
-        </form>
-
+            </form>
+  
     </body>
 </html>

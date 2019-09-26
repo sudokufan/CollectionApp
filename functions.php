@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * connects SQL database to PHP
  */
@@ -44,9 +43,56 @@ function displaySetCollection(array $sets) :string {
                     </div>';
             }
         } else {
-            return 'Incorrect datatype; check input';
+            return 'Incorrect SQL data entered; check database';
         }
     }
-
     return $result;
+}
+
+/**
+ * checks new set inputs are valid
+ *
+ * @param array $newSet the set info captured from user form
+ *
+ * @return bool true/false conclusion for user input validity
+ */
+function checkUserInput(array $newSet) :bool {
+    $valid = "";
+    if (is_string($newSet['name']) === false) {
+        $valid = false;
+        $failedAt = 'name';
+    } elseif (strlen($newSet['name']) > 255) {
+        $valid = false;
+        $failedAt = 'name';
+    } elseif (is_int((int)$newSet['cards']) === false) {
+        $valid = false;
+        $failedAt = 'cards';
+    } elseif (strlen($newSet['cards']) > 255) {
+        $valid = false;
+        $failedAt = 'cards';
+    } elseif (is_string($newSet['released']) === false) {
+        $valid = false;
+        $failedAt = 'released';
+    } elseif (strlen($newSet['released']) > 10) {
+        $valid = false;
+        $failedAt = 'released';
+    } else {
+        $valid = true;
+        $failedAt = "NA";
+    }
+    return $valid;
+}
+
+/**
+ * adds new card set to the page
+ *
+ * @param array $newSet the set info captured from user form
+ *
+ * @param PDO $db connection to database where set info is stored
+ */
+function addNewSet(array $newSet, PDO $db) {
+
+        $statement = "INSERT INTO `MTGSets` (`name`, `cards`, `released`) VALUES (?, ?, ?)";
+        $query = $db->prepare($statement);
+        return $query->execute([$newSet['name'], $newSet['cards'], $newSet['released']]);
 }

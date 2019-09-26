@@ -12,20 +12,42 @@ class StackTest extends TestCase
                     </div>';
         $input = [['name'=>'value', 'released'=>'value', 'cards'=>'value']];
         $case = displaySetCollection($input);
-        $this->assertEquals($case, $expected);
+        $this->assertEquals($expected, $case);
     }
 
     public function testFailureDisplaySetCollection() {
-        $expected = 'Incorrect datatype; check input';
+        $expected = 'Incorrect SQL data entered; check database';
         $input = [['Yu-Gi-Oh set']];
         $case = displaySetCollection($input);
-        $this->assertEquals($case, $expected);
+        $this->assertEquals($expected, $case);
     }
 
     public function testMalformedDisplaySetCollection() {
         $input = 'Ixalan, 289, 2018-04-27';
         $this->expectException(TypeError::class);
         displaySetCollection($input);
+    }
+
+//    check user input tests to be done
+
+    public function testSuccessCheckUserInput() {
+        $expected = ($valid = true);
+        $input = ['name'=>'Ixalan', 'cards'=>289, 'released'=>'2018-04-27'];
+        $case = checkUserInput($input);
+        $this->assertEquals($expected, $case);
+    }
+
+    public function testFailureCheckUserInput() {
+        $expected = ($valid = false);
+        $input = [['Yu-Gi-Oh set']];
+        $case = checkUserInput($input);
+        $this->assertEquals($expected, $case);
+    }
+
+    public function testMalformedCheckUserInput() {
+        $input = 'Ixalan, 289, 2018-04-27';
+        $this->expectException(TypeError::class);
+        checkUserInput($input);
     }
 
 }
