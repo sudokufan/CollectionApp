@@ -58,11 +58,7 @@ function displaySetCollection(array $sets) :string {
  */
 function checkUserInput(array $newSet) :bool {
     $valid = "";
-
-    filter_var( [$newSet['name']], FILTER_SANITIZE_STRING);
-    filter_var( [$newSet['cards']], FILTER_SANITIZE_STRING);
-    filter_var( [$newSet['released']], FILTER_SANITIZE_STRING);
-
+    
     if (is_string($newSet['name']) === false) {
         $valid = false;
     } elseif (strlen($newSet['name']) > 255) {
