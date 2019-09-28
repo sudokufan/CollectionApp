@@ -12,7 +12,7 @@ function connectDB() :PDO {
 /**
  * requests card set details from database
  *
- * @param array $db the PDO connection to SQL
+ * @param PDO $db the PDO connection to SQL
  *
  * @return array the data from SQL
  */
